@@ -1,0 +1,21 @@
+terraform {
+  backend "remote" {
+    organization = "Terraform Cloud Organization Name"
+
+    workspaces {
+      name = "Terraform Cloud Workspace"
+    }
+  }
+}
+
+data "terraform_remote_state" "organization" {
+  backend = "remote"
+
+  config = {
+    organization = "Terraform Cloud Organization Name"
+
+    workspaces = {
+      name = "Terraform Cloud Organization Workspace Name"
+    }
+  }
+}

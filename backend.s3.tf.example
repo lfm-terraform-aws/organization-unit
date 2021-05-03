@@ -1,0 +1,7 @@
+terraform {
+  backend "s3" {
+    bucket = aws_s3_bucket.remote_state_bucket.id
+    key    = "terraform.tfstate"
+    region = "us-east-1"
+  }
+}
